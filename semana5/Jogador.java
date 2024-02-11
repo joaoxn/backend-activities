@@ -1,12 +1,12 @@
 package semana5;
 
-// EX 1 - Crie a Classe semana5.Jogador
+// EX 1 - Crie a Classe Jogador
 public class Jogador {
     // EX2 - Adicione encapsulamento ao semana5.Jogador
     // Todos os atributos estão private e possuem getters e setters
     private String nome;
     private int idade;
-    private int pontuacao;
+    public int pontuacao;
     private int numeroTentativas;
 
     public Jogador(String nome, int idade, int pontuacao, int numeroTentativas) {
@@ -20,17 +20,18 @@ public class Jogador {
         this.nome = nome;
     }
 
-    public Jogador() {
+    public void adicionaPontos(int qtd) {
+        this.pontuacao += qtd;
     }
 
-    public void adicionaPontos() {
+    // Método perdePontos() removido, pois adicionaPontos() pode ser usado, com um parâmetro negativo.
 
-    }
-    public void perdePontos() {
+////   public void perdePontos(int qtd) {
+////        this.pontuacao -= qtd;
+////   }
 
-    }
-    public void adicionaTentativa() {
-
+    public void adicionaTentativa(int qtd) {
+        this.numeroTentativas+= qtd;
     }
 
     public String getNome() {
@@ -45,6 +46,7 @@ public class Jogador {
         return idade;
     }
 
+
     public void setIdade(int idade) {
         this.idade = idade;
     }
@@ -53,15 +55,7 @@ public class Jogador {
         return pontuacao;
     }
 
-    public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
-    }
-
     public int getNumeroTentativas() {
         return numeroTentativas;
-    }
-
-    public void setNumeroTentativas(int numeroTentativas) {
-        this.numeroTentativas = numeroTentativas;
     }
 }
